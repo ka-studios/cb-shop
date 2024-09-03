@@ -1,4 +1,4 @@
-"use client"
+"use client"    
 
 import * as React from "react";
 import {
@@ -9,37 +9,20 @@ import {
     CardDescription,
     CardHeader
 } from "@/components/ui/card"
+import { CreditCard, PaymentForm, GooglePay } from 'react-square-web-payments-sdk'
 import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Label } from "@/components/ui/label"
-import {
-    SiPaypal
+    SiSquare,
+    SiGooglepay,
 } from "@icons-pack/react-simple-icons"
-import Link from "next/link";
 
 interface BuyCardProps {
     name: string,
     price: string,
     img?: string,
-    available: string,
     desc?: string,
-    payUri: string,
-    isMmo: boolean,
 }
 
-export function BuyCard({ name, price, img, available, desc, payUri, isMmo }: BuyCardProps) {
+export function BuyCard({ name, price, img, desc }: BuyCardProps) {
     let ription;
     if (desc) {
         ription = desc
@@ -47,8 +30,8 @@ export function BuyCard({ name, price, img, available, desc, payUri, isMmo }: Bu
         ription = "No Description Provided"
     }
     return (
-        <div className="flex flex-wrap flex-row w-full gap-[5vw]">
-            <Card className="w-[60vw] h-[85vh]">
+        <div className="flex flex-wrap flex-row w-full gap-[2vw]">
+            <Card className="w-[55vw] ml-[3vw] h-[85vh]">
                 <CardHeader>
                     <CardTitle></CardTitle>
                 </CardHeader>
@@ -58,7 +41,7 @@ export function BuyCard({ name, price, img, available, desc, payUri, isMmo }: Bu
             </Card>
             <div className="w-[25vw] h-[85vh] flex">
                 <Card className="w-full p-6">
-                    <CardTitle>100  mcMMO Levels</CardTitle>
+                    <CardTitle>100 mcMMO Levels</CardTitle>
                     <CardDescription className="mt-[2vh]">{ription}</CardDescription>
                     <CardContent className="grid place-items-center h-[75svh]">
                         <div className="grid w-full mt-[20vh] -mb-[10vh] grid-cols-2 place-items-start">
@@ -66,14 +49,47 @@ export function BuyCard({ name, price, img, available, desc, payUri, isMmo }: Bu
                                 ${price}
                             </h2>
                             <Card className="p-3 w-full mt-[1.5vh]">   
-                                <div className="grid place-items-center">
-                                    <SiPaypal />
+                                <div className="grid grid-cols-2 place-items-center">
+                                    <SiSquare /><SiGooglepay />       
                                 </div>
                             </Card>
                             
                         </div>
-                        <div className="grid w-full place-items-center mb-[25vh]">
-                            <Button asChild className="w-full"><Link href="placehold.this">Buy Now</Link></Button>
+                        <div className="grid w-full place-items-start">
+                            <div className="w-full gap-10">
+                                <PaymentForm
+                                        formProps={{
+                                            className: ""
+                                        }}
+                                        applicationId="sandbox-sq0idb-hS6CBaHEhNWZeUNNQO0wiw"
+                                        cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
+                                            const response = await fetch('/api/pay', {
+                                                method: "POST",
+                                                headers: {
+                                                    "Content-Type": "application/json",
+                                                },
+                                                body: JSON.stringify({
+                                                    sourceId: token.token,
+                                                    amount: Number(price) * 100,
+                                                }),
+                                            })
+                                            console.log(await response.json())
+                                        }}
+                                        createPaymentRequest={() => ({
+                                            countryCode: "US",
+                                            currencyCode: "USD",
+                                            total: {    
+                                                amount: `${price}.00`,
+                                                label: "Total",
+                                            },
+                                        })}
+                                        locationId='LS0VCAXY9C2GB'                 
+                                >
+                                    <GooglePay className="mb-[3vh] rounded-md" buttonColor="white" buttonType="long"/>
+                                    <CreditCard className="rounded-lg -mb-[1.5vh]" />
+                                    
+                                </PaymentForm>
+                            </div>
                         </div>
                     </CardContent>
                 </Card>

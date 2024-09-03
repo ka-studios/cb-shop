@@ -19,4 +19,7 @@ export const siteConfig = {
     github: "https://github.com/ka-studios",
     eagler: "https://cburger.net/client",
   },
+  secrets: {
+    SQUARE_ACCESS_TOKEN: "EAAAl1O-VPkD28dnteEjTMX8SZ--MvoNUNB5fsXoVC1g5u5nbCXUNn6_IU6Imq7c"
+  }
 }
