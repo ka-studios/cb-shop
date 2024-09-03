@@ -1,16 +1,14 @@
 import {
+  SiDiscord,
+  SiGithub,
+  SiNextdotjs,
+} from "@icons-pack/react-simple-icons"
+import {
   LucideProps,
   Moon,
   SunMedium,
   type Icon as LucideIcon,
 } from "lucide-react"
-
-import { 
-  SiDiscord,
-  SiNextdotjs,
-  SiGithub
-} from "@icons-pack/react-simple-icons"
-
 
 export type Icon = LucideIcon
 

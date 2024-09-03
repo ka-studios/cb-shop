@@ -11,13 +11,14 @@ export default function IndexPage() {
           The best Eaglercraft server.
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-          We are a team of people that want to provide a flawless Eaglercraft experience.
-          With gamemodes from Lifesteal to Bedwars, everyone has something to play.
+          We are a team of people that want to provide a flawless Eaglercraft
+          experience. With gamemodes from Lifesteal to Bedwars, everyone has
+          something to play.
         </p>
       </div>
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.eagler}  
+          href={siteConfig.links.eagler}
           rel="noreferrer"
           className={buttonVariants()}
         >

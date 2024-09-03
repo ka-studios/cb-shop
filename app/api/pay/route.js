@@ -19,7 +19,7 @@ export async function POST(request) {
             sourceId: reqBody.sourceId,
             amountMoney: {
                 currency: 'USD',
-                amount: reqBody.amount
+                amount: reqBody.amount,
             }  
         });
 

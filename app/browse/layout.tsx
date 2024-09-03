@@ -1,22 +1,16 @@
-import * as React from 'react';
+import * as React from "react"
 
 interface LayoutProps {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 export default function BrowseLayout({ children }: LayoutProps) {
-    return (
-        <div className="h-screen flex flex-row">
-            <div className="bg-background w-64">
-                {/* Sidebar content */}
-            </div>
-            <div className="flex-1 overflow-y-scroll mt-5">
-                <div className="flex space-x-5 ml-10">
-                    {children}
-                </div>
-            </div>
-            <div className="bg-background w-64">
-                {/* Sidebar content */}
-            </div>
-        </div>
-    )
+  return (
+    <div className="flex h-screen flex-row">
+      <div className="w-64 bg-background">{/* Sidebar content */}</div>
+      <div className="mt-5 flex-1 overflow-y-scroll">
+        <div className="ml-10 flex space-x-5">{children}</div>
+      </div>
+      <div className="w-64 bg-background">{/* Sidebar content */}</div>
+    </div>
+  )
 }
