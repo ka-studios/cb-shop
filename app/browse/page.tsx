@@ -17,7 +17,7 @@ export default function BrowsePage() {
             price="12"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="https://buymeplease.biz"
+            buyUri="/buy/rank   /god"
           />
           <Item
             name="Burger King"
@@ -25,7 +25,7 @@ export default function BrowsePage() {
             price="8"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="https://buymeplease.biz"
+            buyUri="/buy/rank/king"
           />
           <Item
             name="Burger Lover"
@@ -33,7 +33,7 @@ export default function BrowsePage() {
             price="5"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="https://buymeplease.biz"
+            buyUri="/buy/rank/lover"
           />
           <Item
             name="Burger Fan"
@@ -41,7 +41,7 @@ export default function BrowsePage() {
             price="3"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="https://buymeplease.biz"
+            buyUri="/buy/rank/fan"
           />
         </TabsContent>
         <TabsContent value="crates" className="flex flex-wrap">
@@ -80,13 +80,13 @@ export default function BrowsePage() {
         </TabsContent>
         <TabsContent value="mmo" className="flex place-items-center">
           <Item
-            name="mcMMO Levels"
+            name="100 mcMMO Levels"
             desc="Example"
             price="2"
             isMmo="true"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="https://buymeplease.biz"
+            buyUri="/buy/mmo"
           />
         </TabsContent>
       </Tabs>

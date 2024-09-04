@@ -18,6 +18,7 @@ export const siteConfig = {
     discord: "https://discord.gg/M8vqyybrAj",
     github: "https://github.com/ka-studios",
     eagler: "https://cburger.net/client",
+    root: "http://localhost:3000"
   },
   secrets: {
     SQUARE_ACCESS_TOKEN:
