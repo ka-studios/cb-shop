@@ -17,7 +17,7 @@ export default function BrowsePage() {
             price="12"
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
-            buyUri="/buy/rank   /god"
+            buyUri="/buy/rank/god"
           />
           <Item
             name="Burger King"

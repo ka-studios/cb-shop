@@ -8,4 +8,4 @@ export default function BuyMmo() {
       img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
     />
   )
-}
+}     
