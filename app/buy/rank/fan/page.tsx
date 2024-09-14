@@ -1,14 +1,14 @@
 import { BuyCard } from "@/components/buy-card"
+import { siteConfig } from "@/config/site"
 
 export default function BuyMmo() {
   return (
     <BuyCard
-      name="Burger Fan"
-      price="3"   
+      name={siteConfig.products.fan.name}
+      price={siteConfig.products.fan.price}   
       img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
-      desc="
-        The most basic rank. Includes a Weekly Kit.
-      "
+      desc={siteConfig.products.fan.description}
+      stripePriceId={siteConfig.products.fan.stripePriceId}
     />
   )
 }

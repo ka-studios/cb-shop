@@ -38,7 +38,7 @@ export default function BrowsePage() {
           <Item
             name="Burger Fan"
             desc="Example"
-            price="3"
+            price="3"   
             img="https://us-east-1.tixte.net/uploads/i.kasd.nl/cblogo.png"
             available="true"
             buyUri="/buy/rank/fan"
