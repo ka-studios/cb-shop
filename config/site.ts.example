@@ -1,0 +1,54 @@
+export type SiteConfig = typeof siteConfig
+
+export const siteConfig = {
+  name: "Cheeseburger Network Shop",
+  description:
+    "Cheeseburger Network Shop",
+  mainNav: [
+    {
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Shop",
+      href: "/browse",
+    },
+  ],
+  links: {
+    discord: "",
+    github: "",
+    eagler: "",
+    root: ""
+  },
+  secrets: {
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "",
+    STRIPE_SECRET_KEY: ""
+  },
+  products: {
+    fan: {
+      name: 'Burger Fan',
+      description: '',
+      price: '$3',
+      stripePriceId: '',
+    },
+    lover: {
+      name: 'Burger Lover',
+      description: '',
+      price: '$5',
+      stripePriceId: '',
+    },
+    king: {
+      name: 'Burger King',
+      description: '',
+      price: '$8',
+      stripePriceId: '',
+    },
+    god: {
+      name: 'Burger God',
+      description: '',
+      price: '$12',
+      stripePriceId: '',
+    },  
+  },
+
+}
